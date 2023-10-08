@@ -1,4 +1,3 @@
-using System.Security.Claims;
 using API.DTOs;
 using API.Entitites;
 using API.Extensions;
@@ -24,7 +23,7 @@ namespace API.Controllers
             _photoService = photoService;
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Member")]
         [HttpGet]
         public async Task<ActionResult<PagedList<MemberDto>>> GetUsers([FromQuery]UserParams userParams) 
         {
